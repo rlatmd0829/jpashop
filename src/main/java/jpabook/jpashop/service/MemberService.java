@@ -23,7 +23,7 @@ public class MemberService {
     }
 
     @Transactional // 읽기만 하는게 아니라서 Transactional을 따로 붙혀준다.
-    private void validateDuplicateMember(Member member) {
+    void validateDuplicateMember(Member member) {
         // Exception
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if(!findMembers.isEmpty()){
